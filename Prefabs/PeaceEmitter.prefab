@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3250492938480522445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485886458723911470}
+  - component: {fileID: 2317133148136001254}
+  m_Layer: 0
+  m_Name: PeaceEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485886458723911470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250492938480522445}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.102495104, y: -0.2145175, z: -0.02265725, w: 0.97106314}
+  m_LocalPosition: {x: -0.08037679, y: 1.3081608, z: 0.69625896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2317133148136001254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250492938480522445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571036efab971b4db7e7705eed2917c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluid: {fileID: 2651846931886291303, guid: 51953f4b901ac9b48b9f5b2dccee1bde, type: 3}
+  simulation: {fileID: 0}
+  volumeMin: 0.005
+  volumeMax: 0.005
+  speedMin: 10
+  speedMax: 10
+  lifeMin: 4
+  lifeMax: 5
+  spread: 0.1
+  direction: {x: 0, y: 0, z: 1}
+  interval: 0.0000001
+  age: 0
