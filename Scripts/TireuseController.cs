@@ -15,6 +15,8 @@ public class TireuseController : MonoBehaviour
 
     private IEnumerator coroutine;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class TireuseController : MonoBehaviour
                 _beerIsRunning = true;
                 StartCoroutine(coroutine);
                 beerSound.Play();
+               player.tag = "SUSPICIOUS";
             }
 
         } 
@@ -39,6 +42,7 @@ public class TireuseController : MonoBehaviour
             _beerIsRunning = false;
             StopCoroutine(coroutine);
             beerSound.Stop();
+            player.tag = "Untagged";
         }
     }
 
