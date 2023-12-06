@@ -11,6 +11,8 @@ public class RobotTestScriptFree : MonoBehaviour {
     public Transform player;
     
     RaycastHit hit;
+
+    public UnityEngine.AI.NavMeshAgent agent;
     
 
     void Start () {
@@ -28,16 +30,17 @@ public class RobotTestScriptFree : MonoBehaviour {
             float elapsedTime = 0f;
             Random random = new Random();
             Vector3 startingPosition = transform.position;
-            float x = UnityEngine.Random.Range(-10, 10);
-            float z = UnityEngine.Random.Range(-10, 10);
+            float x = (float)UnityEngine.Random.Range(0, 10);
+            float z = (float)UnityEngine.Random.Range(0, 10);
             targetPosition = new Vector3(x, 0.0f, z);
             if (targetPosition != Vector3.zero)
             {
                 transform.forward = targetPosition;
             }
-            while (elapsedTime < 10.0f)
+            while (elapsedTime < 2.0f)
             {
-                 transform.position = Vector3.Lerp(startingPosition, targetPosition, elapsedTime / 10.0f);
+               // transform.position = Vector3.Lerp(startingPosition, targetPosition, elapsedTime / 10.0f);
+                agent.SetDestination(targetPosition);
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
