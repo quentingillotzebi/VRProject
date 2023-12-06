@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2080583551684410097}
   - component: {fileID: 2651846931886291303}
   m_Layer: 0
-  m_Name: Peace
+  m_Name: PeaceFluid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
