@@ -23,13 +23,24 @@ public class GlassController : MonoBehaviour
     {
         if (collider.tag == "BEER_PARTICLE")
         {
-            if (_liquidChild.transform.localScale.y < _maxScale - _fillStep)
+            if (_liquidChild.transform.localScale.y < _maxScale + _fillStep)
             {
                 _liquidChild.transform.localScale += new Vector3(0, _fillStep, 0);
             }
-            
+
             Destroy(collider.gameObject);
         }
+    }
 
+    private void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "MOUTH")
+        {
+            if (_liquidChild.transform.localScale.y - _fillStep >= 0)
+            {
+                _liquidChild.transform.localScale -= new Vector3(0, _fillStep, 0);
+            }
+        }
+        
     }
 }
