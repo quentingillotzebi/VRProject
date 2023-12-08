@@ -18,7 +18,7 @@ public class Holster : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(centerEyeAnchor.transform.position.x, centerEyeAnchor.transform.position.y/2, centerEyeAnchor.transform.position.z);
-        var rotationDifference = Math.Abs(centerEyeAnchor.transform.eulerAngles.y - transform.eulerAngles.y);
+        //var rotationDifference = Math.Abs(centerEyeAnchor.transform.eulerAngles.y - transform.eulerAngles.y);
         var finalRotationSpeed = rotationSpeed;
 
         //var step = finalRotationSpeed * Time.deltaTime;

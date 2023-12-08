@@ -11,6 +11,7 @@ public class PeaceOnGrab : MonoBehaviour
     public Transform spawnpoint;
     private XRGrabInteractable grabbable;
     private GameObject spawnedPeace;
+    public GameObject trigger;
 
 
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ public class PeaceOnGrab : MonoBehaviour
     public void OnGrab(XRBaseInteractor arg)
     {
         spawnedPeace = Instantiate(peace);
-        gameObject.tag = "SUSPICIOUS";
+        trigger.tag = "SUSPICIOUS";
     }
 
      void OnRelease(XRBaseInteractor interactor)
@@ -51,7 +52,7 @@ public class PeaceOnGrab : MonoBehaviour
         if (spawnedPeace != null)
         {
             Destroy(spawnedPeace);
-            gameObject.tag = "Untagged";
+            trigger.tag = "Untagged";
         }
     }
     
