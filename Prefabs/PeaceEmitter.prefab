@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fluid: {fileID: 2651846931886291303, guid: 51953f4b901ac9b48b9f5b2dccee1bde, type: 3}
   simulation: {fileID: 0}
-  volumeMin: 0.005
-  volumeMax: 0.005
+  volumeMin: 0.002
+  volumeMax: 0.002
   speedMin: 10
   speedMax: 10
   lifeMin: 4

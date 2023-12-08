@@ -7,12 +7,11 @@ public class RobotTestScriptFree : MonoBehaviour {
     private Animator anim;
     public Vector3 targetPosition;
     public float speed=5;
-
     public Transform player;
-    
     RaycastHit hit;
-
     public UnityEngine.AI.NavMeshAgent agent;
+    public AudioClip sus;
+    private AudioSource[] allAudioSources;
     
 
     void Start () {
@@ -54,10 +53,13 @@ public class RobotTestScriptFree : MonoBehaviour {
     }
     
 	
-   
+    void StopAllAudio() {
+	    allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+	    foreach( AudioSource audioS in allAudioSources) {
+		    audioS.Stop();
+	    }
+    }
     void Update () {
-
-        
         float maxDistance = 100.0f;
         for (int i = -10; i <= 20; i++)
         {
@@ -69,6 +71,10 @@ public class RobotTestScriptFree : MonoBehaviour {
                 if (hit.collider.CompareTag("Player"))
                 {
                     Debug.Log("Le joueur a été touché !");
+                } else if (hit.collider.CompareTag("SUSPICIOUS")) {
+                    Debug.Log("Mec chelou détecté");
+                    StopAllAudio();
+                    AudioSource.PlayClipAtPoint(sus,transform.position);
                 }
             }
             
