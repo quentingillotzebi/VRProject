@@ -17,7 +17,7 @@ public class Holster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(centerEyeAnchor.transform.position.x, centerEyeAnchor.transform.position.y/2, centerEyeAnchor.transform.position.z);
+        transform.position = new Vector3(centerEyeAnchor.transform.position.x, centerEyeAnchor.transform.position.y/1.5f, centerEyeAnchor.transform.position.z);
         //var rotationDifference = Math.Abs(centerEyeAnchor.transform.eulerAngles.y - transform.eulerAngles.y);
         var finalRotationSpeed = rotationSpeed;
 

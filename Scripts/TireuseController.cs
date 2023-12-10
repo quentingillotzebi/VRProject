@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TireuseController : MonoBehaviour
 {
@@ -17,10 +18,15 @@ public class TireuseController : MonoBehaviour
 
     public GameObject player;
 
+	public XRGrabInteractable grabbable;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         coroutine = BeerFlow();
+		//grabbable = GetComponent<XRGrabInteractable>();
     }
 
     // Update is called once per frame
@@ -42,7 +48,9 @@ public class TireuseController : MonoBehaviour
             _beerIsRunning = false;
             StopCoroutine(coroutine);
             beerSound.Stop();
-            player.tag = "Untagged";
+			if (!grabbable.isSelected){
+            	player.tag = "Player";
+			}
         }
     }
 

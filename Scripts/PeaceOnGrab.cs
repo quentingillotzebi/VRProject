@@ -38,6 +38,12 @@ public class PeaceOnGrab : MonoBehaviour
         {
             spawnedPeace.transform.rotation = spawnpoint.transform.rotation;
             spawnedPeace.transform.position = spawnpoint.transform.position;
+			Material myMaterial = trigger.GetComponent<Renderer>().material;
+            Color newColor = myMaterial.color; // Obtenez la couleur actuelle
+            newColor.a = newColor.a - 0.0005f; // Modifiez l'alpha (transparence)
+
+// Assignez la nouvelle couleur modifiée au matériau
+            myMaterial.color = newColor;
         }
     }
 
@@ -45,6 +51,7 @@ public class PeaceOnGrab : MonoBehaviour
     {
         spawnedPeace = Instantiate(peace);
         trigger.tag = "SUSPICIOUS";
+		
     }
 
      void OnRelease(XRBaseInteractor interactor)
@@ -52,7 +59,7 @@ public class PeaceOnGrab : MonoBehaviour
         if (spawnedPeace != null)
         {
             Destroy(spawnedPeace);
-            trigger.tag = "Untagged";
+            trigger.tag = "Player";
         }
     }
     

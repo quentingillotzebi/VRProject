@@ -15,7 +15,7 @@ public class RobotTestScriptFree : MonoBehaviour {
     
 
     void Start () {
-	
+		//Debug.Log("TEST");
         anim = this.gameObject.GetComponent<Animator> ();
         StartCoroutine(RobotMoving());
     }
@@ -68,17 +68,28 @@ public class RobotTestScriptFree : MonoBehaviour {
             Debug.DrawRay(transform.position,test, Color.green);
             if (Physics.Raycast(ray, out hit, maxDistance))
             {
-                if (hit.collider.CompareTag("Player"))
+//Debug.Log("J'ai envie de crever");
+                if (hit.collider.CompareTag("SUSPICIOUS"))
                 {
-                    Debug.Log("Le joueur a été touché !");
-                } else if (hit.collider.CompareTag("SUSPICIOUS")) {
+                    Debug.Log("Le joueur a été touché et est suspicious!");
+					StopAllAudio();
+                    AudioSource.PlayClipAtPoint(sus,transform.position);
+					StartCoroutine(end());
+	
+			}
+                /*} else if (hit.collider.CompareTag("SUSPICIOUS")) {
                     Debug.Log("Mec chelou détecté");
                     StopAllAudio();
                     AudioSource.PlayClipAtPoint(sus,transform.position);
-                }
+                }*/
             }
             
         }
        
     }
+
+	IEnumerator end () {
+	 	yield return new WaitForSeconds(3.0f);
+		Time.timeScale = 0f;
+	}
 }

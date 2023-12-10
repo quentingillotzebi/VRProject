@@ -11405,6 +11405,7 @@ MonoBehaviour:
   faucet: {fileID: 2124626016}
   beerSound: {fileID: 1366511530}
   player: {fileID: 1229777680}
+  grabbable: {fileID: 0}
 --- !u!4 &604570480
 Transform:
   m_ObjectHideFlags: 0
@@ -34175,6 +34176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillPercentage: 0.01
   glassParent: {fileID: 1674856597}
+  player: {fileID: 0}
+  lController: {fileID: 0}
+  rController: {fileID: 0}
+  source: {fileID: 0}
 --- !u!23 &1674856603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40952,6 +40957,7 @@ MonoBehaviour:
   speed: 1
   player: {fileID: 0}
   agent: {fileID: 2009994711}
+  sus: {fileID: 0}
 --- !u!195 &2009994711
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -41927,6 +41933,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42190,6 +42200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillPercentage: 0.01
   glassParent: {fileID: 2076265615}
+  player: {fileID: 0}
+  lController: {fileID: 0}
+  rController: {fileID: 0}
+  source: {fileID: 0}
 --- !u!23 &2076265621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42496,6 +42510,7 @@ MonoBehaviour:
   faucet: {fileID: 398861646}
   beerSound: {fileID: 1366511530}
   player: {fileID: 1229777680}
+  grabbable: {fileID: 0}
 --- !u!4 &2090305302
 Transform:
   m_ObjectHideFlags: 0
